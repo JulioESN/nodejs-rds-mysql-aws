@@ -69,7 +69,8 @@ $ npm init -y
 $ npm install express mysql dotenv
 ```
 
-## Crear archivo de variables ".env" (anexo datos ficticios para referencia, sustituir por los propios)
+## Crear archivo de variables ".env" 
+> Nota: anexo datos ficticios para referencia, sustituir por los propios.
 ```console
 $ touch .env
 RDS_HOSTNAME='rdsmysqlmydbi.cxurrrrbvgthhf3w.us-east-1.rds.amazonaws.com'
