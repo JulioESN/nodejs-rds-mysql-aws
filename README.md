@@ -188,6 +188,16 @@ $ docker push juliosanchez/connect-nodejs-rds-mysql-aws
 Ahora podrá usar ​​​​​​​docker ​​​​​​pull "juliosanchez/connect-nodejs-rds-mysql-aws" para usar la imagen en una nueva máquina.
 ```
 
+### Imagen base disponible en Docker Hub
+> Base generada en esta guía.
+```console
+https://hub.docker.com/repository/docker/juliosanchez/connect-nodejs-rds-mysql-aws/general
+
+> To push a new tag to this repository:
+docker push juliosanchez/connect-nodejs-rds-mysql-aws:tagname
+
+```
+
 ### Opcional: crear archivo "docker-compose.yml"
 > para usar imagen ubicada en https://hub.docker.com/
 ```console
