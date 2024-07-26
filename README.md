@@ -23,14 +23,15 @@ $ cd ~/OSTECH/connect-nodejs-rds-mysql-aws
 ```console
 $ code .
 ```
-## Instalar npm y módulos necesarios:
-```console
-$ npm install express mysql dotenv
-```
 
 ## Iniciar estructura para el archivo "package.json"
 ```console
 $ npm init -y
+```
+
+## Instalar npm y módulos necesarios:
+```console
+$ npm install express mysql dotenv
 ```
 
 ## Archivo package.json generado:
