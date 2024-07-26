@@ -12,30 +12,19 @@ $ npm --version
 8.5.1
 ```
 
-## Crear carpeta "connect-nodejs-rds-mysql-aws" en "/home/jsanchezn/OSTECH/" y entrar al directorio
+## Crear carpeta "connect-nodejs-rds-mysql-aws" en "~/OSTECH/" y entrar al directorio
 ```console
-$ mkdir /home/jsanchezn/OSTECH/connect-nodejs-rds-mysql-aws
-$ cd /home/jsanchezn/OSTECH/connect-nodejs-rds-mysql-aws
-```
-
-## Estructura final de archivos y carpetas:
-```console
-$ ls -lart
--- jul 25 13:43 Dockerfile
--- jul 25 15:09 node_modules
--- jul 25 15:09 package.json
--- jul 25 17:25 package-lock.json
--- jul 25 18:35 .env
--- jul 25 19:12 index.js
--- jul 25 19:40 docker-compose.yml
--- jul 25 19:48 dc-build-image.yml
--- jul 25 20:04 .gitignore
--- jul 25 20:42 README.md
+$ mkdir ~/OSTECH/connect-nodejs-rds-mysql-aws
+$ cd ~/OSTECH/connect-nodejs-rds-mysql-aws
 ```
 
 ## Abrir Visual Studio
 ```console
 $ code .
+```
+## Instalar npm y módulos necesarios:
+```console
+$ npm install express mysql dotenv
 ```
 
 ## Iniciar estructura para el archivo "package.json"
@@ -63,12 +52,6 @@ $ npm init -y
   }
 }
 ```
-
-## Instalar npm y módulos necesarios:
-```console
-$ npm install express mysql dotenv
-```
-
 ## Crear archivo de variables ".env" 
 > Nota: anexo datos ficticios para referencia, sustituir por los propios.
 ```console
@@ -144,6 +127,21 @@ RUN npm install express mysql dotenv
 
 #Default command
 CMD ["npm","start"]
+```
+
+## Estructura final de archivos y carpetas:
+```console
+$ ls -lart
+-- jul 25 13:43 Dockerfile
+-- jul 25 15:09 node_modules
+-- jul 25 15:09 package.json
+-- jul 25 17:25 package-lock.json
+-- jul 25 18:35 .env
+-- jul 25 19:12 index.js
+-- jul 25 19:40 docker-compose.yml
+-- jul 25 19:48 dc-build-image.yml
+-- jul 25 20:04 .gitignore
+-- jul 25 20:42 README.md
 ```
 
 ## Ejecutar aplicación NodeJS
