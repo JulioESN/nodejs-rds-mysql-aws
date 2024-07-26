@@ -286,9 +286,9 @@ docker system prune -a
 ```console
 git init
 git add .
-git commit -m "Aplicación NodeJS RDS MySQL en AWS"
+git commit -m "Aplicación NodeJS BD MySQL RDS en AWS"
 git branch -M main
-git remote add origin https://github.com/JulioESN/connect-nodejs-rds-mysql-aws.git
+git remote add origin https://github.com/JulioESN/nodejs-rds-mysql-aws.git
 git push -u origin main
 
 git config --global user.email nocedajulio@gmail.com
