@@ -1,8 +1,9 @@
 # Aplicación NodeJS conectada a BD MySQL RDS de AWS.
 
 ## Crear base de datos RDS MySql en AWS
-Generar grupo de seguridad para el acceso correspondiente.
-Instalar paquetes necesarios:
+> Generar grupo de seguridad para el acceso correspondiente.
+
+## Instalar paquetes necesarios:
 ```console
 $ sudo apt-get update && sudo apt install nodejs npm
 Validar versiones instaladas
