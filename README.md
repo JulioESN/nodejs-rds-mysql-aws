@@ -1,4 +1,4 @@
-# Ejemplo Aplicación NodeJS conectada a BD MySQL RDS de AWS.
+# Aplicación NodeJS conectada a BD MySQL RDS de AWS.
 
 ## Crear base de datos RDS MySql en AWS
 Generar grupo de seguridad para el acceso correspondiente.
@@ -178,7 +178,8 @@ $ docker run -p 8080:8080 juliosanchez/connect-nodejs-rds-mysql-aws
 $ curl http://localhost:8080
 ```
 
-### Opcional: Subir imagen docker al repositorio https://hub.docker.com/
+### Opcional: Subir imagen docker al repositorio docker hub.
+> https://hub.docker.com/
 ```console
 ~$ docker login -u juliosanchez
 jsanchezn@hp-julio-esn:~/OSTECH/docker-nodejs-app-hm1$ docker login -u juliosanchez
@@ -188,7 +189,8 @@ $ docker push juliosanchez/connect-nodejs-rds-mysql-aws
 Ahora podrá usar ​​​​​​​docker ​​​​​​pull "juliosanchez/connect-nodejs-rds-mysql-aws" para usar la imagen en una nueva máquina.
 ```
 
-### Opcional: crear archivo "docker-compose.yml" para usar imagen ubicada en https://hub.docker.com/
+### Opcional: crear archivo "docker-compose.yml"
+> para usar imagen ubicada en https://hub.docker.com/
 ```console
 version: "3.8"
 services:
@@ -220,9 +222,10 @@ Detener contenedores
 $ docker-compose -f docker-compose.yml down
 ```
 
-### Opcional: En caso de desearlo, puedes construir imagen local generando el archivo "docker-compose.yml"
+### Opcional: construir imagen local
+> Generar archivo "docker-compose.yml"
 ```console
-touch dc-build-image.yml
+$ touch dc-build-image.yml
 
 version: "3.8"
 services:
