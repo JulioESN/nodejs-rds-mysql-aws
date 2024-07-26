@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  connect-nodejs-rds-mysql-aws:
+    container_name: connect-nodejs-rds-mysql-aws
+    image: juliosanchez/connect-nodejs-rds-mysql-aws:latest
+    restart: always
+    environment:
+      DB_HOST:    "${RDS_HOSTNAME}"
+      DB_PORT:    "${RDS_PORT}"
+      DB_USER:    "${RDS_USERNAME}"
+      DB_PASSWORD: "${RDS_PASSWORD}"
+      DB_NAME:    "${RDS_DATABASE}"
+    ports:
+      - "8080:8080" # Expose port 8080 on host
+    networks:
+      - connect-nodejs-rds-mysql-aws
+networks: # Specify the network for bridging
+  connect-nodejs-rds-mysql-aws:
+    driver: bridge
