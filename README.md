@@ -182,11 +182,10 @@ $ curl http://localhost:8080
 > https://hub.docker.com/
 ```console
 ~$ docker login -u juliosanchez
-jsanchezn@hp-julio-esn:~/OSTECH/docker-nodejs-app-hm1$ docker login -u juliosanchez
+$ docker login -u juliosanchez
 Password: 
 Login Succeeded
-$ docker push juliosanchez/connect-nodejs-rds-mysql-aws
-Ahora podrá usar ​​​​​​​docker ​​​​​​pull "juliosanchez/connect-nodejs-rds-mysql-aws" para usar la imagen en una nueva máquina.
+> Ahora podrá usar ​​​​​​​docker ​​​​​​pull "juliosanchez/connect-nodejs-rds-mysql-aws" para usar la imagen en una nueva máquina.
 ```
 
 ### Imagen base disponible en Docker Hub
