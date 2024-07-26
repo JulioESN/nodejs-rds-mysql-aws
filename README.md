@@ -19,6 +19,7 @@ $ cd ~/OSTECH/connect-nodejs-rds-mysql-aws
 ```
 
 ## Abrir Visual Studio
+> En su defecto, usar el editor de texto preferido vim | nono | emcas
 ```console
 $ code .
 ```
