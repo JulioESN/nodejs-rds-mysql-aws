@@ -293,10 +293,8 @@ docker system prune -a
 
 ### Comandos Git:
 ```console
-> Excluir subir archivos y directorios innecesarios a github.
-echo "node_modules" >> .gitignore
-...
-git config --global user.email nocedajulio@gmail.com
+echo "node_modules" >> .gitignore # // Excluir subir archivos y directorios innecesarios a github.
+git config --global user.email correo@gmail.com
 git init
 git add .
 git commit -m "Aplicación NodeJS BD MySQL RDS en AWS"
