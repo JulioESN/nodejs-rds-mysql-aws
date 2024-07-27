@@ -1,9 +1,11 @@
 # Aplicación NodeJS conectada a BD MySQL RDS de AWS.
 
-## Crear base de datos RDS MySql en AWS
-> Generar grupo de seguridad para el acceso correspondiente.
+## Base de datos MySQl RDS en AWS
+> Partimos que ya tienes una "BD MySQL" funcional y disponible con el "grupo de seguridad" para el acceso correspondiente.
+> Más adelante incluiré como crearla via GUI o por IC.
 
 ## Instalar paquetes necesarios:
+> Equipo usado en este ejemplo "Ubuntu 22.04.4 LTS"
 ```console
 $ sudo apt-get update && sudo apt install nodejs npm
 Validar versiones instaladas
@@ -14,28 +16,30 @@ $ npm --version
 ```
 
 ## Crear carpeta "connect-nodejs-rds-mysql-aws" en "~/OSTECH/" y entrar al directorio
+> Puedes establecer los nombres que mejor consideres.
 ```console
 $ mkdir ~/OSTECH/connect-nodejs-rds-mysql-aws
 $ cd ~/OSTECH/connect-nodejs-rds-mysql-aws
 ```
 
 ## Abrir Visual Studio
-> En su defecto, usar el editor de texto preferido vim | nano | emacs
+> En su defecto, usar tu editor de texto preferido (vim | nano | emacs)
 ```console
 $ code .
 ```
 
-## Iniciar estructura para el archivo "package.json"
+## Iniciar estructura de la aplicación NodeJS
 ```console
 $ npm init -y
 ```
 
-## Instalar npm y módulos necesarios:
+## Instalar módulos necesarios:
 ```console
 $ npm install express mysql dotenv
 ```
 
-## Archivo package.json generado:
+## Archivo "package.json" generado:
+> El comando "npm init -y" utilizado previamente genera el archivo "package.json" e incluye las dependencias de los módulos a instalados.
 ```console
 {
   "name": "connect-nodejs-rds-mysql-aws",
@@ -108,7 +112,7 @@ db.connect(function(err) {
 ```
 
 
-## Crear archivo Dockerfile para construir la imagen Docker
+## Crear archivo "Dockerfile" para construir la imagen Docker
 ```console
 $ touch Dockerfile
 ```
@@ -132,7 +136,14 @@ RUN npm install express mysql dotenv
 CMD ["npm","start"]
 ```
 
+## Excluir para "github" carpeta de módulos generada.
+> Evitar subir archivos y directorio innecesarios a github.
+```console
+echo "node_modules" >> .gitignore
+```
+
 ## Estructura final de archivos y carpetas:
+> Resumen de archivos generados:
 ```console
 $ ls -lart
 -- jul 25 13:43 Dockerfile
@@ -149,15 +160,20 @@ $ ls -lart
 
 ## Ejecutar aplicación NodeJS
 ```console
+> Usar comando:
 $ node index.js 
+> O con este otro:
 $ npm start run
+> Salida:
+...
 > connect-nodejs-rds-mysql-aws@1.0.0 start
 > node index.js "run"
 > Listening to requests on Port 8080
 > Conectado a RDS
+...
 ```
 
-## Construir imagen docker
+## Construir imagen docker (local)
 ```console
 $ docker build -t juliosanchez/connect-nodejs-rds-mysql-aws .
 ```
@@ -169,7 +185,8 @@ REPOSITORY                                  TAG       IMAGE ID       CREATED    
 juliosanchez/connect-nodejs-rds-mysql-aws   latest    755f31dfb218   3 minutes ago   155MB
 ```
 
-## Ejecutar el contenedor utilizando la imagen recien creada de manera local:
+## Levantar/Ejecutar la imagen (local):
+> Utiliza la imagen local recien creada
 ```console
 $ docker run -p 8080:8080 juliosanchez/connect-nodejs-rds-mysql-aws
 ```
@@ -179,23 +196,22 @@ $ docker run -p 8080:8080 juliosanchez/connect-nodejs-rds-mysql-aws
 $ curl http://localhost:8080
 ```
 
-### Opcional: Subir imagen docker al repositorio docker hub.
-> https://hub.docker.com/
+### Opcional: Subir imagen a docker hub.
+> Autenticarse y cargar imagen
 ```console
-~$ docker login -u juliosanchez
 $ docker login -u juliosanchez
 Password: 
 Login Succeeded
-> Ahora podrá usar ​​​​​​​docker ​​​​​​pull "juliosanchez/connect-nodejs-rds-mysql-aws" para usar la imagen en una nueva máquina.
+
+> To push a new tag to this repository:
+docker push juliosanchez/connect-nodejs-rds-mysql-aws:tagname
 ```
+> Ahora podrá usar ​​​​​​​docker ​​​​​​pull "juliosanchez/connect-nodejs-rds-mysql-aws" para usar la imagen en una nueva máquina.
 
 ### Imagen base disponible en Docker Hub
 > Base generada en esta guía.
 ```console
 https://hub.docker.com/repository/docker/juliosanchez/connect-nodejs-rds-mysql-aws/general
-
-> To push a new tag to this repository:
-docker push juliosanchez/connect-nodejs-rds-mysql-aws:tagname
 
 ```
 
@@ -223,7 +239,7 @@ networks: # Specify the network for bridging
     driver: bridge
 ```
 
-### Levantar aplicación 
+### Levantar aplicación con "docker-compose"
 ```console
 $ docker-compose -f docker-compose.yml up -d
 
