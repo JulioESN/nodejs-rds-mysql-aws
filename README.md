@@ -136,12 +136,6 @@ RUN npm install express mysql dotenv
 CMD ["npm","start"]
 ```
 
-## Excluir para "github" carpeta de módulos generada.
-> Evitar subir archivos y directorio innecesarios a github.
-```console
-echo "node_modules" >> .gitignore
-```
-
 ## Estructura final de archivos y carpetas:
 > Resumen de archivos generados:
 ```console
@@ -203,16 +197,15 @@ $ docker login -u juliosanchez
 Password: 
 Login Succeeded
 
+```console
 > To push a new tag to this repository:
 docker push juliosanchez/connect-nodejs-rds-mysql-aws:tagname
 ```
-> Ahora podrá usar ​​​​​​​docker ​​​​​​pull "juliosanchez/connect-nodejs-rds-mysql-aws" para usar la imagen en una nueva máquina.
 
-### Imagen base disponible en Docker Hub
-> Base generada en esta guía.
+> Ahora podrá usar "​​​​​​​docker ​​​​​​pull juliosanchez/connect-nodejs-rds-mysql-aws" para disponer de la imagen pública.
+> Imagen base disponible en Docker Hub. Base generada en esta guía.
 ```console
 https://hub.docker.com/repository/docker/juliosanchez/connect-nodejs-rds-mysql-aws/general
-
 ```
 
 ### Opcional: crear archivo "docker-compose.yml"
@@ -300,6 +293,12 @@ docker system prune -a
 
 ### Comandos Git:
 ```console
+
+> Excluir para "github" carpeta de módulos generada, evitar subir archivos y directorio innecesarios a github.
+```console
+echo "node_modules" >> .gitignore
+```
+git config --global user.email nocedajulio@gmail.com
 git init
 git add .
 git commit -m "Aplicación NodeJS BD MySQL RDS en AWS"
@@ -307,7 +306,6 @@ git branch -M main
 git remote add origin https://github.com/JulioESN/nodejs-rds-mysql-aws.git
 git push -u origin main
 
-git config --global user.email nocedajulio@gmail.com
 git pull
 git init [nombre del proyecto]
 git branch <nombre-de-la-rama>
