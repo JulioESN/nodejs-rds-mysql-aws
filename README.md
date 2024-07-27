@@ -293,11 +293,9 @@ docker system prune -a
 
 ### Comandos Git:
 ```console
-
-> Excluir para "github" carpeta de módulos generada, evitar subir archivos y directorio innecesarios a github.
-```console
+> Excluir subir archivos y directorios innecesarios a github.
 echo "node_modules" >> .gitignore
-```
+...
 git config --global user.email nocedajulio@gmail.com
 git init
 git add .
@@ -305,15 +303,12 @@ git commit -m "Aplicación NodeJS BD MySQL RDS en AWS"
 git branch -M main
 git remote add origin https://github.com/JulioESN/nodejs-rds-mysql-aws.git
 git push -u origin main
-
 git pull
 git init [nombre del proyecto]
 git branch <nombre-de-la-rama>
 git branch -d <nombre-de-la-rama>
 git clone <https://link-con-nombre-del-repositorio>
-
 ```
-
 
 ### URLS de referencias NodeJS:
 ```console
