@@ -241,7 +241,7 @@ Detener contenedores
 $ docker-compose -f docker-compose.yml down
 ```
 
-### Opcional: construir imagen local
+### Opcional: construir imagen local con "docker-compose"
 > Generar archivo "docker-compose.yml"
 ```console
 $ touch dc-build-image.yml
